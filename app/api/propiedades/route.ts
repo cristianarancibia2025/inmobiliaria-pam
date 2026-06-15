@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import prisma from '../../../lib/prisma';
+export const dynamic = 'force-dynamic';
 
 // Esta función LEE las propiedades que están guardadas en la base de datos
 export async function GET() {
@@ -28,6 +29,7 @@ export async function POST(request: Request) {
         precio: Number(body.precio),
         moneda: body.moneda,
         comuna: body.comuna,
+        region: body.region || 'Región Metropolitana',
         habitaciones: Number(body.habitaciones),
         banos: Number(body.banos),
         superficie: Number(body.superficie),
