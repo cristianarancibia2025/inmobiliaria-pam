@@ -29,7 +29,6 @@ export async function POST(request: Request) {
         precio: Number(body.precio),
         moneda: body.moneda,
         comuna: body.comuna,
-        region: body.region || 'Región Metropolitana',
         habitaciones: Number(body.habitaciones),
         banos: Number(body.banos),
         superficie: Number(body.superficie),

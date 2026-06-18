@@ -1,15 +1,7 @@
 import { PrismaClient } from '@prisma/client';
 
 const prismaClientSingleton = () => {
-  return new PrismaClient({
-    datasources: {
-      db: {
-        // Si Vercel no encuentra la variable durante la construcción, usa esta falsa para no bloquearse.
-        // Cuando la página esté en vivo, usará tu enlace real de Neon.
-        url: process.env.DATABASE_URL || "postgresql://falso:falso@localhost:5432/falso_db",
-      },
-    },
-  });
+  return new PrismaClient();
 };
 
 declare global {
